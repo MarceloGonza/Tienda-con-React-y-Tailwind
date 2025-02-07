@@ -6,9 +6,16 @@ import { RiNotification2Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosLogOut } from "react-icons/io";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  const { showMenu } = props;
+
   return (
-    <div className="bg-[#1F1D2B] fixed lg:left-0 top-0 w-28 h-full flex flex-col justify-between py-4 rounded-tr-xl rounded-br-xl z-50 -left-full">
+    <div
+      className={`bg-[#1F1D2B] fixed lg:left-0 top-0 w-28 h-full flex flex-col justify-between py-4 rounded-tr-xl 
+        rounded-br-xl z-50 transition-all ${
+          showMenu ? "left-0" : "-left-full"
+        }`}
+    >
       <div>
         <ul className="pl-4">
           <h1 className="text-2xl text-gray-300 uppercase font-bold text-center my-5">

@@ -4,6 +4,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { PiUserCircleDashed } from "react-icons/pi";
 import { MdAddBox } from "react-icons/md";
 import { HiOutlineChartPie } from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
 //components
 import Sidebar from "./components/shared/Sidebar";
 function App() {
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <div className="bg-[#262837] w-full min-h-screen">
-      <Sidebar />
+      <Sidebar showMenu={showMenu} />
       {/* Menu movil */}
       <nav
         className="bg-[#1F1D2B] lg:hidden fixed w-full bottom-0 left-0 text-3xl text-gray-400 py-2 px-8 flex 
@@ -31,8 +32,8 @@ function App() {
         <button className="p-2">
           <HiOutlineChartPie />
         </button>
-        <button className="text-white p-2">
-          <CiMenuFries />
+        <button onClick={toggleMenu} className="text-white p-2">
+          {showMenu ? <IoMdClose /> : <CiMenuFries />}
         </button>
       </nav>
     </div>
