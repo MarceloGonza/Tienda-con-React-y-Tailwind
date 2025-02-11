@@ -154,7 +154,34 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-2 fixed lg:static right-0">Carrito</div>
+        <div className="lg:col-span-2 fixed lg:static right-0 top-0 bg-[#1F1D2B] w-full h-full">
+          {/* Orders */}
+          <div className="relative pt-16 text-gray-300 p-8">
+            <IoMdClose className="absolute left-4 top-4 p-3 box-content text-gray-300 bg-[#262837] rounded-full text-xl" />
+            <h1 className="text-2xl my-4">Orders #151416</h1>
+            {/* Button */}
+            <div className="flex items-center gap-4 flex-wrap mb-8">
+              <button className="bg-[#ec7c6a] text-white py-2 px-4 rounded-xl">
+                Dine In
+              </button>
+              <button className="text-[#ec7c6a] py-2 px-4 rounded-xl border border-gray-500">
+                To Go
+              </button>
+              <button className="text-[#ec7c6a] py-2 px-4 rounded-xl border border-gray-500">
+                Delivery
+              </button>
+            </div>
+            {/* Car */}
+            <div>
+              <div className="grid grid-cols-6">
+                <h5 className="col-span-4">Items</h5>
+                <h5>Qty</h5>
+                <h5>Price</h5>
+              </div>
+              {/* Products */}
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
