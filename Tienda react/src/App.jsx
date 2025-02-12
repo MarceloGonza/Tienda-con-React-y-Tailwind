@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { RiDeleteBin6Line } from "react-icons/ri";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { CiMenuFries } from "react-icons/ci";
@@ -180,7 +181,7 @@ function App() {
               </div>
               {/* Product */}
               <div className="bg-[#262837] p-4 rounded-xl">
-                <div className="grid grid-cols-6">
+                <div className="grid grid-cols-6 mb-4">
                   {/* Products description*/}
                   <div className="col-span-4 flex items-center gap-3">
                     <img src="plato.png" className="w-10 h-10 object-cover" />
@@ -196,6 +197,21 @@ function App() {
                   {/* Price */}
                   <div>
                     <span>$4.58</span>
+                  </div>
+                </div>
+                {/* Note*/}
+                <div className="grid grid-cols-6 items-center">
+                  <form className="col-span-5">
+                    <input
+                      type="text"
+                      className="bg-[#1F1D2B] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order note..."
+                    />
+                  </form>
+                  <div>
+                    <button className="border border-red-500 p-2 rounded-lg">
+                      <RiDeleteBin6Line className="text-red-500" />
+                    </button>
                   </div>
                 </div>
               </div>
