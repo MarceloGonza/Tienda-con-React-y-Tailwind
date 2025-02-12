@@ -173,12 +173,32 @@ function App() {
             </div>
             {/* Car */}
             <div>
-              <div className="grid grid-cols-6">
+              <div className="grid grid-cols-6 mb-4 p-4">
                 <h5 className="col-span-4">Items</h5>
                 <h5>Qty</h5>
                 <h5>Price</h5>
               </div>
-              {/* Products */}
+              {/* Product */}
+              <div className="bg-[#262837] p-4 rounded-xl">
+                <div className="grid grid-cols-6">
+                  {/* Products description*/}
+                  <div className="col-span-4 flex items-center gap-3">
+                    <img src="plato.png" className="w-10 h-10 object-cover" />
+                    <div>
+                      <h5 className="text-sm">Speacy seaso...</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty*/}
+                  <div>
+                    <span>2</span>
+                  </div>
+                  {/* Price */}
+                  <div>
+                    <span>$4.58</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
