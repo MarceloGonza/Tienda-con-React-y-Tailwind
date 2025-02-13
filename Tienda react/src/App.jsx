@@ -74,6 +74,13 @@ function App() {
     },
   ]);
 
+  //eliminar producto del carrito
+
+  const removeProductCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    console.log(removeProductCart);
+  };
+
   const addToCart = (product) => {
     setCart((prevCart) => {
       const existingProduct = prevCart.find((item) => item.id === product.id);
@@ -92,7 +99,12 @@ function App() {
   return (
     <div className="bg-[#262837] w-full min-h-screen">
       <Sidebar showMenu={showMenu} />
-      <Car showOrder={showOrder} setShowOrder={setShowOrder} cart={cart} />
+      <Car
+        showOrder={showOrder}
+        setShowOrder={setShowOrder}
+        cart={cart}
+        removeProductCart={removeProductCart}
+      />
       {/* Menu movil */}
       <nav
         className="bg-[#1F1D2B] lg:hidden fixed w-full bottom-0 left-0 text-3xl text-gray-400 py-2 px-8 flex 
@@ -125,7 +137,7 @@ function App() {
           </div>
 
           {/* Renderiza los productos */}
-          <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+          <div className="px-4 py-8  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {products.map((product) => (
               <Card key={product.id} product={product} addToCart={addToCart} />
             ))}

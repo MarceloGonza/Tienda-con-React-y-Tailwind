@@ -1,6 +1,7 @@
 import { IoCloseSharp } from "react-icons/io5";
+import { AiFillDelete } from "react-icons/ai";
 
-const Car = ({ showOrder, setShowOrder, cart }) => {
+const Car = ({ showOrder, setShowOrder, cart, removeProductCart }) => {
   return (
     <div
       className={`lg:col-span-2 fixed top-0 bg-[#1F1D2B] w-full lg:w-96 lg:right-0 h-full transition-all z-50
@@ -25,24 +26,37 @@ const Car = ({ showOrder, setShowOrder, cart }) => {
         </div>
 
         {/* Lista de productos en el carrito */}
-        <div className="h-[400px] overflow-scroll">
+        <div className="h-[400px] overflow-scroll overflow-x-hidden">
           {cart.length === 0 ? (
             <p className="text-gray-500">Your cart is empty</p>
           ) : (
             cart.map((item) => (
-              <div key={item.id} className="bg-[#262837] p-4 rounded-xl mb-4">
+              <div
+                key={item.id}
+                className="bg-[#262837] p-4 rounded-xl mb-4 flex flex-nowrap justify-between"
+              >
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <img src={item.img} className="w-10 h-10 object-cover" />
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={item.img}
+                      className="w-12 h-12 object-cover flex"
+                    />
                     <div>
-                      <h5 className="text-sm">{item.description}</h5>
-                      <p className="text-xs text-gray-500">
+                      <h5 className="text-sm pb-1">{item.description}</h5>
+                      <p className="text-xs text-gray-500 flex items-center pt-1 pb-1">
                         ${item.price.toFixed(2)}
                       </p>
+                      <span className="text-gray-400 p-3 gap-3 relative right-3">
+                        x {item.quantity}
+                      </span>
                     </div>
                   </div>
-                  <span className="text-white">x{item.quantity}</span>
                 </div>
+                {/* icono delete */}
+                <AiFillDelete
+                  onClick={() => removeProductCart(item.id)}
+                  className="text-[#ec7c6a] text-2xl cursor-pointer relative top-5"
+                />
               </div>
             ))
           )}
